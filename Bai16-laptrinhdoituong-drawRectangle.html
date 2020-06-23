@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thực hành cây dựng lớp Date</title>
+</head>
+<body>
+<canvas id="myCanvas" width="600px" height="400px" style="border: 1px solid"></canvas>
+<script>
+    let Rectangle = function(width,height) {
+        this.width = width;
+        this.height=height;
+        this.getWidth= function () {
+            return width;
+        }
+        this.getHeight=function () {
+            return height;
+        }
+
+        this.getCircuit=function () {
+            return (width+height)*2;
+        }
+        this.getArea = function() {
+            return width*height;
+        }
+
+    }
+
+    let rectangle=new Rectangle(200,100);
+    let height=rectangle.height;
+    let width=rectangle.width;
+    let circuit=rectangle.getCircuit();
+    let area=rectangle.getArea();
+    document.write("<br>"+"chiều rộng là: " + height+"; "+"chiều dài là: "+width+"; "+"<br>"
+        +"chu vi là: "+circuit+"; "+"diện tích là: " + area)
+
+    var a = document.getElementById("myCanvas");
+    var ctx = a.getContext("2d");
+    ctx.rect(100,100,rectangle.width,rectangle.height)
+    ctx.stroke();
+
+
+</script>
+</body>
+</html>
